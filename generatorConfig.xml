@@ -13,7 +13,7 @@
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.0.7:3306/mandofin_test"
+                        connectionURL="jdbc:mysql://192.168.0.7:3306/baize-test"
                         userId="root"
                         password="dev@110">
         </jdbcConnection>
@@ -28,7 +28,7 @@
         <javaClientGenerator targetPackage="com.example.demo.mapper" targetProject="src/main/java"
                              type="XMLMAPPER"/>
 
-		<table tableName="account"></table>
+		<table tableName="successkilled"></table>
 		 
     </context>
 </generatorConfiguration>

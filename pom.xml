@@ -74,7 +74,55 @@
 		    <groupId>c3p0</groupId>
 		    <artifactId>c3p0</artifactId>
 		    <version>0.9.1.2</version>
-		</dependency>	
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>1.2.47</version>
+		</dependency>
+		
+		<!-- jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.8.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.8.7</version>
+        </dependency>
+		
+		    <!--补全项目依赖-->
+    <!-- 1.日志 java日志：slf4j,log4j,logback,common-logging
+        slf4j 是规范/接口
+        日志实现：log4j,logback,common-logging
+        使用：slf4j + logback
+     -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.12</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-core</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+    <!-- 实现 slf4j 接口并且整合 -->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.1.1</version>
+    </dependency>
+			
 	</dependencies>
 
 	<build>
