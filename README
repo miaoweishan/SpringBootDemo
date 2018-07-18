@@ -1,0 +1,23 @@
+秒杀功能：查询两张表数据，
+当期时间在seckill 中开始和结束时间之间，seckill 产品数量减一，并且在successkilled插入一条数据
+
+//参与秒杀产品
+create table seckill (
+	seckillId BIGINT(20) NOT NULL AUTO_INCREMENT,
+	`name` VARCHAR(20) NOT NULL,
+	number INT(30) NOT NULL,
+	startTime timestamp,
+	endTime timestamp,
+	createTime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	modifyDate timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (seckillId)
+)DEFAULT CHARSET=utf8;
+
+//秒杀成功记录表
+create table successkilled (
+	seckillId BIGINT(20) NOT NULL AUTO_INCREMENT,
+	userPhone VARCHAR(11) NOT NULL,
+	state TINYINT(1) NOT NULL,
+	createTime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (seckillId)
+)DEFAULT CHARSET=utf8;
