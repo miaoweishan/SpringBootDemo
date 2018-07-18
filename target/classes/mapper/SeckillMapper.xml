@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.SeckillMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.dao.Seckill">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="seckillId" jdbcType="BIGINT" property="seckillid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="number" jdbcType="INTEGER" property="number" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="modifyDate" jdbcType="TIMESTAMP" property="modifydate" />
+  </resultMap>
+
+	 <select id="getSeckillList" resultMap="BaseResultMap">
+	 		select `name`,number,startTime,endTime,createTime 
+	 		from seckill;
+	 </select>
+	 
+	 <select id="getSeckillById" resultMap="BaseResultMap">
+	 		select `name`,number,startTime,endTime,createTime 
+	 		from seckill 
+	 		where seckillId=#{seckillId};
+	 </select>
+  
+	 <update id="reduceNumber">
+	     /*具体的sql*/
+	     UPDATE
+	       seckill
+	     SET
+	       number = number - 1
+	     WHERE seckillid = #{arg0}
+	     AND starttime <![CDATA[ <= ]]> #{arg1}
+	     AND endtime >= #{arg1}
+	     AND number > 0;
+	 </update>
+  
+</mapper>
