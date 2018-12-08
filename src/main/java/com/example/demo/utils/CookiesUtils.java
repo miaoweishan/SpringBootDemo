@@ -7,12 +7,15 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class CookiesUtils {
 	
 	/*
 	 * 添加cookies
 	 */
-	public void setCookies(HttpServletRequest requst,HttpServletResponse response) throws IOException {
+	public static void setCookies(HttpServletRequest request,HttpServletResponse response) throws IOException {
 
         // 1.创建Cookie对象
 		Cookie cookies = new Cookie("webname", "XCoder Studio");
